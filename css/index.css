@@ -1,0 +1,243 @@
+:root {
+  --color-primario: #355E3B;
+  --color-secundario: #F4EBD9;
+  --color-accent: #D9822B;
+  --color-enlace: #81B29A;
+  --color-texto: #2E2E3A;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--color-secundario);
+  color: var(--color-texto);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+
+header {
+  background: url('../Galeria/Trasobares.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 100px 0;
+}
+
+header h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+header p.lead {
+  font-size: 1.5rem;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--color-primario) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #f8f9fa !important;
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.navbar-nav .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-accent);
+  border-radius: 2px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--color-enlace) !important;
+}
+
+/* Content */
+.content-box {
+  background-color: var(--color-secundario);
+  border: 1px solid var(--color-primario);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  border-radius: .5rem;
+  margin: 2rem 0;
+}
+
+/* Tabs (segunda navegación) */
+.tabs-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tab {
+  padding: 10px 20px;
+  background: rgb(203, 203, 203);
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  transition: background 0.3s, transform 0.3s;
+  flex: 1 1 auto;
+  max-width: 200px;
+  text-align: center;
+}
+
+.tab:hover {
+  background: rgb(183, 183, 183);
+  transform: translateY(-2px);
+}
+
+.tab.active {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.content {
+  width: 100%;
+  max-width: 800px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 5px 5px 5px;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: none;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.content.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 0.4s ease;
+}
+
+@media (max-width: 576px) {
+  .tab {
+    flex: 1 1 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Estilos para hacer resaltar el texto */
+.content.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  background-color: #cfcfcf;
+}
+
+.content h2 {
+  color: #355E3B;
+  margin-bottom: 0.5rem;
+}
+
+.content h3 {
+  color: #D9822B;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.content p,
+.content li {
+  color: #2E2E3A;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.content ul,
+.content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.content.show {
+  display: block;
+}
+
+
+/* Footer */
+footer {
+  background-color: var(--color-primario);
+  color: #ccc;
+}
+
+footer a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+.social-icons .bi {
+  font-size: 1.5rem;
+  margin-right: .5rem;
+}
+
+
+
+/* Textos de fecha y evento */
+.text-primario { color: var(--color-primario) !important; }
+.text-accent  { color: var(--color-accent) !important; }
+
+/* Ajustes estéticos */
+#agenda2025 h2 {
+  color: var(--color-primario);
+  margin-bottom: 0.5rem;
+}
+#agenda2025 p {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+#agenda2025 .border-bottom {
+  border-color: var(--color-primario) !important;
+}
